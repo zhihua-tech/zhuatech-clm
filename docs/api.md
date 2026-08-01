@@ -9,3 +9,4 @@
 | GET | `/api/admin/work-orders` | 合同审查清单 |
 | GET | `/api/shopfloor/dashboard` | 工程师任务工作台 |
 | POST | `/api/shopfloor/work-orders/{id}/reports` | 提交审查结论 |
+| POST | `/api/admin/renewal-risk` | 合同续约风险评估 |

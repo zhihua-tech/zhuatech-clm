@@ -66,3 +66,7 @@ docker compose up --build
 | ![知华科技微信咨询二维码 1](docs/images/zhuatech-wechat-consulting.png) | ![知华科技微信咨询二维码 2](docs/images/zhuatech-wechat-consulting-2.png) |
 
 关键词：合同管理系统源码、CLM、Java 合同管理、Vue 合同审批、履约管理、知华科技、上海如静知华信息科技有限公司。
+
+## 合同续约风险闸门
+
+`POST /api/admin/renewal-risk` 综合到期日、通知期、合同金额、自动续约条款、未完成义务和责任人配置输出续约风险。进入通知窗口的高风险合同会标记 `ACTION_NOW` 并生成明确处置清单。
