@@ -70,3 +70,7 @@ docker compose up --build
 ## 合同续约风险闸门
 
 `POST /api/admin/renewal-risk` 综合到期日、通知期、合同金额、自动续约条款、未完成义务和责任人配置输出续约风险。进入通知窗口的高风险合同会标记 `ACTION_NOW` 并生成明确处置清单。
+
+## 合同义务敞口
+
+新增 `POST /api/clm/insights/obligation-exposure`。系统汇总临近到期及已逾期义务，结合潜在违约金额与合同总额计算敞口比例，输出 `CONTROLLED`、`ACT_NOW` 或 `ESCALATE`，便于法务和业务负责人优先处理高影响合同义务。
