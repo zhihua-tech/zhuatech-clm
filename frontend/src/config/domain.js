@@ -1,4 +1,4 @@
-/* Copyright 2026 上海如静知华信息科技有限公司 */
+/* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 export const domain={
  code:'CLM',systemName:'合同生命周期管理系统',englishName:'CONTRACT LIFECYCLE MANAGEMENT',
  theme:{primary:'#24456b',dark:'#17283f',accent:'#c28a3c'},
