@@ -1,5 +1,9 @@
 # ZhuaTech CLM｜知华科技合同生命周期管理系统
 
+## 企业级增强：履约义务计划
+
+新增合同义务的逾期、30 天内到期、计划中、已完成和凭证待补分类，汇总风险敞口并生成责任人、升级和补证动作。接口为 `POST /api/advanced/clm/obligation-plan`。
+
 ## 企业级增强：合同生效治理
 
 新增版本、法务财务、相对方、签署、受限方、先决条件、数据保护和义务登记门禁，详见 [合同生效治理](docs/ENTERPRISE_CONTRACT_EFFECTIVENESS.md)。
