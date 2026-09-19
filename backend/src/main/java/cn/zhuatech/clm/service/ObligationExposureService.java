@@ -11,8 +11,14 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class ObligationExposureService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result evaluate(Request request) {
         List<Obligation> atRisk = request.obligations().stream()
             .filter(item -> item.daysUntilDue() <= 30 && (!item.evidenceReady() || item.dependencyBlocked()))
@@ -31,12 +37,21 @@ public class ObligationExposureService {
             decision, atRisk.stream().map(Obligation::obligationCode).toList(), actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String contractNo,
                           @NotEmpty List<@Valid Obligation> obligations) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Obligation(@NotBlank String obligationCode, int daysUntilDue,
                              @DecimalMin("0") BigDecimal penaltyExposure,
                              boolean ownerAssigned, boolean evidenceReady,
                              boolean dependencyBlocked) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String contractNo, int atRiskObligations, int overdueObligations,
                          BigDecimal penaltyExposure, String decision,
                          List<String> obligationCodes, List<String> actions) {}

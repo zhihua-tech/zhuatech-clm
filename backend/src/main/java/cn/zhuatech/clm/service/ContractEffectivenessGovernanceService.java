@@ -2,8 +2,14 @@
 package cn.zhuatech.clm.service;
 import jakarta.validation.constraints.NotBlank; import org.springframework.stereotype.Service;
 import java.util.ArrayList; import java.util.List;
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class ContractEffectivenessGovernanceService{
+ /**
+  * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+  */
  public Assessment assess(Request r){List<String>b=new ArrayList<>();List<String>a=new ArrayList<>();
   if(!r.approvedVersion())b.add("待生效文本不是最终批准版本"); if(!r.legalApproved())b.add("法务审批未完成");
   if(!r.counterpartyVerified())b.add("合同相对方主体未核验"); if(!r.signaturesComplete())b.add("签署或印章未完成");
@@ -12,9 +18,18 @@ public class ContractEffectivenessGovernanceService{
   if(!r.obligationsRegistered())a.add("登记交付、付款、续约和通知义务");
   Decision d=!b.isEmpty()?Decision.HOLD:!a.isEmpty()?Decision.REVIEW:Decision.EFFECTIVE;
   return new Assessment(r.contractNo(),d,List.copyOf(b),List.copyOf(a));}
+ /**
+  * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+  */
  public record Request(@NotBlank String contractNo,boolean approvedVersion,boolean legalApproved,boolean financeApproved,
                        boolean counterpartyVerified,boolean signaturesComplete,boolean conditionsPrecedentSatisfied,
                        boolean dataProtectionApproved,boolean sanctionsCleared,boolean obligationsRegistered){}
+ /**
+  * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+  */
  public record Assessment(String contractNo,Decision decision,List<String> blockers,List<String> actions){}
+ /**
+  * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+  */
  public enum Decision{EFFECTIVE,REVIEW,HOLD}
 }

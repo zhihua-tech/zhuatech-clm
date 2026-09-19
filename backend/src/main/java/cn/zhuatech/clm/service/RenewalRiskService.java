@@ -10,8 +10,14 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class RenewalRiskService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result assess(Request request) {
         int score = (request.daysToExpiry() <= request.noticePeriodDays() ? 30 : 0)
             + (request.annualValue().compareTo(BigDecimal.valueOf(1_000_000)) >= 0 ? 20 : 0)
@@ -28,10 +34,16 @@ public class RenewalRiskService {
         return new Result(request.contractNo(), score, level, timing, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String contractNo, @Min(0) int daysToExpiry,
                           @DecimalMin("0") BigDecimal annualValue, boolean autoRenew,
                           @Min(0) int openObligations, @Min(0) int noticePeriodDays,
                           boolean ownerAssigned) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String contractNo, int riskScore, String level,
                          String timing, List<String> actions) {}
 }

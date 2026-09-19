@@ -2,8 +2,17 @@
 package cn.zhuatech.clm.controller;
 import cn.zhuatech.clm.common.ApiResponse; import cn.zhuatech.clm.service.ContractEffectivenessGovernanceService;
 import jakarta.validation.Valid; import org.springframework.web.bind.annotation.*;
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @RestController @RequestMapping("/api/enterprise/clm")
 public class ContractEffectivenessGovernanceController{
- private final ContractEffectivenessGovernanceService service; public ContractEffectivenessGovernanceController(ContractEffectivenessGovernanceService service){this.service=service;}
+ private final ContractEffectivenessGovernanceService service; /**
+                                                                * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                                */
+public ContractEffectivenessGovernanceController(ContractEffectivenessGovernanceService service){this.service=service;}
+ /**
+  * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+  */
  @PostMapping("/contract-effectiveness") public ApiResponse<ContractEffectivenessGovernanceService.Assessment> assess(@Valid @RequestBody ContractEffectivenessGovernanceService.Request request){return ApiResponse.ok("合同生效评估完成",service.assess(request));}
 }
