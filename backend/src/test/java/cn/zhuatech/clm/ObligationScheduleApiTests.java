@@ -17,4 +17,4 @@ package cn.zhuatech.clm;import org.junit.jupiter.api.*;import org.springframewor
  /**
   * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
   */
- @Test void anonymousIsDenied()throws Exception{mvc.perform(post("/api/advanced/clm/obligation-plan").contentType(MediaType.APPLICATION_JSON).content(BODY)).andExpect(status().isForbidden());}}
+ @Test void anonymousIsDenied()throws Exception{mvc.perform(post("/api/advanced/clm/obligation-plan").contentType(MediaType.APPLICATION_JSON).content(BODY)).andExpect(status().isUnauthorized());}}
