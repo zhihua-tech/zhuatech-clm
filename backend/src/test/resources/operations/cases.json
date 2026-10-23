@@ -1,0 +1,51 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "noticeDate": "2026-12-02",
+      "noticeDaysLeft": "#40",
+      "increase": "#200",
+      "renewalValue": "#10200"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "indexPct": "5"
+    },
+    "expected": {
+      "decision": "REVIEW",
+      "increase": "#300"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "endDate": "2026-11-01"
+    },
+    "expected": {
+      "decision": "REVIEW"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "endDate": "2026-10-22"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "noticeDays": "0",
+      "endDate": "2026-10-23"
+    },
+    "expected": {
+      "decision": "REVIEW"
+    },
+    "error": false
+  }
+]

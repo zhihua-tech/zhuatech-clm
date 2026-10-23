@@ -1,0 +1,85 @@
+{
+  "slug": "clm",
+  "title": "续约通知截止与指数调价上限",
+  "fields": [
+    {
+      "key": "id",
+      "label": "记录编号",
+      "type": "ID"
+    },
+    {
+      "key": "endDate",
+      "label": "合同结束",
+      "type": "DATE"
+    },
+    {
+      "key": "noticeDays",
+      "label": "提前通知天数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "3650"
+    },
+    {
+      "key": "annualValue",
+      "label": "年度金额",
+      "type": "NUMBER",
+      "scale": 2,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "indexPct",
+      "label": "输入调价指数%",
+      "type": "NUMBER",
+      "scale": 4,
+      "min": "0",
+      "max": "100"
+    },
+    {
+      "key": "capPct",
+      "label": "合同调价上限%",
+      "type": "NUMBER",
+      "scale": 4,
+      "min": "0",
+      "max": "100"
+    }
+  ],
+  "columns": [
+    {
+      "key": "noticeDate",
+      "label": "通知截止"
+    },
+    {
+      "key": "noticeDaysLeft",
+      "label": "通知剩余天数"
+    },
+    {
+      "key": "increase",
+      "label": "候选调价额"
+    },
+    {
+      "key": "renewalValue",
+      "label": "候选续约金额"
+    }
+  ],
+  "description": "计算合同终止前通知截止，按输入指数与合同上限中的较低值测算续约价格。",
+  "owner": "上海如静知华信息科技有限公司",
+  "website": "https://www.zhuatech.cn/",
+  "authorization": "商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。",
+  "version": 1,
+  "notes": "输入均须为已获授权的同口径数据。金额固定人民币元；比例为百分数。核算结果只用于复核，未审批、未写库、未发起外部调用，也未触发付款、签名、资料销毁或设备控制。建议不构成法律、安全、会计或碳核证结论。",
+  "sample": {
+    "asOf": "2026-10-23",
+    "records": [
+      {
+        "id": "ITEM-001",
+        "endDate": "2027-01-31",
+        "noticeDays": "60",
+        "annualValue": "10000",
+        "indexPct": "2",
+        "capPct": "3"
+      }
+    ]
+  }
+}
